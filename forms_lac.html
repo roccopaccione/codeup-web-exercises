@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Html Forms</title>
+</head>
+<body>
+<h1>Register with Us!</h1>
+<hr>
+<form method="POST" action="https://request-inspector.glitch.me/">
+    <label for="email">Email:</label>
+    <input type="text" name="email" id="email" placeholder="Enter your email address here">
+    <label for="password">Password:</label>
+    <input type="password" name="password" id="password" placeholder="Enter your password here">
+    <br>
+    <button type="submit">Submit</button>
+    <br>
+    <br>
+    <label for="bio">Bio:</label><br>
+        <textarea name="bio" id="bio" placeholder="Please Describe Yourself"></textarea>
+    <br>
+    <button type="submit">Submit</button>
+    <br>
+    <section>
+        <p>How Did You Hear About Us?</p>
+        <input type="checkbox" name="how_you_heard" value="billboard">Billboard<br>
+        <input type="checkbox" name="how_you_heard" value="radio ad">Radio Advertisement<br>
+        <input type="checkbox" name="how_you_heard" value="internet ad">Internet Advertisement<br>
+        <input type="checkbox" name="how_you_heard" value="other">Other<br>
+    </section>
+    <button type="submit">Submit</button>
+    <br>
+    <br>
+    <label for="browser">What Browser Are You Using?</label><br>
+    <select name="browser" id="browser">
+        <option value="chrome">Chrome</option>
+        <option value="safari">Safari</option>
+        <option value="opera">Opera</option>
+        <option value="firefox">Firefox</option>
+        <option value="internet explorer">Internet Explorer</option>
+    </select>
+    <br>
+    <button type="submit">Submit Browser</button>
+</form>
+</body>
+</html>
