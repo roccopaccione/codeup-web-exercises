@@ -1,0 +1,26 @@
+.fancy-header {
+    color: black;
+    text-decoration: underline;
+}
+#main {
+    text-align: center;
+}
+
+body {
+    background-color: grey;
+    background-image: url("../img/dat_boi.png");
+    background-size: contain;
+    font-family: "Copperplate Gothic", Impact, fantasy;
+}
+
+ul {
+    list-style: georgian;
+}
+
+td {
+    font-size: 1.2em;
+    padding: 6px;
+}
+a:hover {
+    color: powderblue;
+}
