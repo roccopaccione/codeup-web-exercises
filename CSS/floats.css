@@ -1,0 +1,23 @@
+
+#container {
+    margin: 50px auto;
+    height: 1000px;
+    width: 500px;
+    border: 1px solid #000;
+    padding: 10px;
+}
+.box2 {
+    background-color: #1969B2; /* blueish */
+    height: 150px;
+    width: 150px;
+    margin: 10px;
+    float: left;
+    position: fixed;
+    top: 10em;
+    bottom: 10em;
+}
+
+p {
+    clear: top;
+}
+
