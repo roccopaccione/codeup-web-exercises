@@ -1,0 +1,40 @@
+:root {
+    --blue-bg-color: #cddeff;
+}
+
+
+body, html {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Ubuntu, sans-serif;
+}
+
+.message {
+    border: 1px solid lightgrey;
+    border-radius: 10px;
+    margin: .5em;
+    padding: .5em;
+}
+.m-info {
+    background-color: var(--blue-bg-color);
+    color: blue;
+}
+
+.m-success {
+    background-color: palegreen;
+    color: darkgreen;
+
+}
+
+.m-warning {
+    background-color: lightyellow;
+    color: yellowgreen;
+
+}
+
+.m-error {
+    background-color: lightcoral;
+    color: red;
+}
