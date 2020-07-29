@@ -122,6 +122,7 @@ section:nth-of-type(6) {
     flex-shrink: 1;
     justify-content: space-between;
     flex-wrap: wrap;
+    align-items: center;
 }
 
 .grey-box {
