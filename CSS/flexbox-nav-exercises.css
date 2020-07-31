@@ -13,6 +13,7 @@
     justify-content: space-between;
     align-items: center;
     font-family: 'Montserrat', sans-serif;
+    font-size: 1vw;
 }
 .nav-item a {
     display: inline-block;
@@ -21,10 +22,10 @@
     text-decoration: none;
 }
 .nav-item a:hover {
-    color: lightskyblue;
+    color: darkblue;
 }
 #logo {
-    font-size: 3em;
+    font-size: 2.5vw;
     padding: .2em 0;
     font-family: 'Work Sans', sans-serif;
 }
@@ -37,4 +38,5 @@
 }
 .nav-links li:nth-child(5) {
     margin: 0 auto;
+    left: calc(50% - 2vw);
 }
