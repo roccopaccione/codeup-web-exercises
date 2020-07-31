@@ -4,10 +4,15 @@
     margin: 0;
     box-sizing: border-box;
 }
+.container {
+    width: 100%;
+    background-color: #c1c1c1;
+}
 .nav-links {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-family: 'Montserrat', sans-serif;
 }
 .nav-item a {
     display: inline-block;
@@ -16,11 +21,12 @@
     text-decoration: none;
 }
 .nav-item a:hover {
-    color: blue;
+    color: lightskyblue;
 }
-#log {
+#logo {
     font-size: 3em;
     padding: .2em 0;
+    font-family: 'Work Sans', sans-serif;
 }
 .nav-links li {
     list-style-type: none;
