@@ -1,0 +1,11 @@
+@media screen and (max-width:991px) {
+    .navbar-brand {
+        margin: auto;
+    }
+}
+.fa-car {
+    size: 1em;
+}
+.container {
+    text-decoration: bold;
+}
