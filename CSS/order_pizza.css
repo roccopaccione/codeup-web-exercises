@@ -1,0 +1,19 @@
+.jumbotron {
+    background-image: url("https://java.codeup.com/examples/bootstrap/pizza.png");
+}
+.container {
+    padding: 0;
+    margin: 0;
+}
+h1 {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.5);
+}
+ul {
+    border-radius: 5px !important;
+    /*margin: 2em !important;*/
+}
+
+#garlic {
+   padding: 2em 1.25em;
+}

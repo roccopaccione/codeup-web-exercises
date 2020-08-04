@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pizza World</title>
+    <link rel="stylesheet" href="CSS/order_pizza.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+          integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"
+            aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="#">Pizza World</a>
+
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Order Online <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Menu</a>
+            </li>
+            <li>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Zip Code" aria-label="Zip Code">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search stores near you</button>
+                </form>
+            </li>
+        </ul>
+
+        <!--        <ul class="collapse navbar-collapse d-flex justify-content-end" id="navbarTogglerDemo03">-->
+        <div>
+            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true"><i class="fas fa-user"></i> Sign Up</a>
+        </div>
+        <!--        </ul>-->
+    </div>
+</nav>
+<!--Start Jumbotron-->
+<main class="container-fluid">
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">Welcome To Pizza World!</h1>
+            <p class="lead"></p>
+        </div>
+    </div>
+</main>
+<!--End Jumbotron-->
+<article>
+    <h2>Build Your Own Pizza!</h2>
+    <!--    Start Navigation Tabs   -->
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
+               aria-selected="true"><span class="badge badge-pill badge-secondary">1</span>
+                Size and Crust</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile"
+               aria-selected="false"><span class="badge badge-pill badge-secondary">2</span>
+                Cheese and Sauce</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact"
+               aria-selected="false"><span class="badge badge-pill badge-secondary">3</span>
+                Toppings</a>
+        </li>
+    </ul>
+    <!--    End Nav Tabs-->
+    <!--    start content card-->
+    <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+            <div class="card">
+                <div class="card-header">
+                    Choose size and crust
+                </div>
+                <div class="card-body m-3">
+                    <ul class="list-group">
+                        <li class="list-group-item active">Hand Tossed</li>
+                        <li class="list-group-item" id="garlic">Garlic seasoned crust with a rich, buttery taste.</li>
+                        <li class="list-group-item">
+                            <label class="form-check-label ml-3" for="exampleRadios1">
+                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1"
+                                       value="option1">
+                                Small (10")
+                            </label></li>
+                        <li class="list-group-item">
+                            <label class="form-check-label ml-3" for="exampleRadios1">
+                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1"
+                                       value="option1">
+                                Medium (12")
+                            </label></li>
+                    </ul>
+                    <ul class="list-group">
+                        <li class="list-group-item active">Crispy Thin</li>
+                        <li class="list-group-item" id="garlic">Thin enough for optimum crispy to crunchy ratio.</li>
+                        <li class="list-group-item">
+                            <label class="form-check-label ml-3" for="exampleRadios1">
+                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1"
+                                       value="option1">
+                                Medium (12")
+                            </label></li>
+                        <li class="list-group-item">
+                            <label class="form-check-label ml-3" for="exampleRadios1">
+                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1"
+                                       value="option1">
+                                Large (14")
+                            </label></li>
+                    </ul>
+                    <br>
+                    <br>
+                    <a href="#" class="btn btn-primary text-justify-right">Next Step</a>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                <div class="card">
+                    <div class="card-header">
+                        Choose Cheese and Sauce
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group">
+                            <li class="list-group-item active">Cheese</li>
+                            <li class="list-group-item m-10">How Much?
+                                <select class="custom-select">
+                                    <option selected>Normal</option>
+                                    <option value="1">Light</option>
+                                    <option value="2">Extra</option>
+                                    <option value="3">Double</option>
+                                </select></li>
+                        </ul>
+                        <ul class="list-group">
+                            <li class="list-group-item active">Sauce</li>
+                            <li class="list-group-item"> What Type?
+                                <select class="custom-select">
+                                    <option selected> Robust Inspired Tomato Sauce</option>
+                                    <option value="1">Marinara Sauce</option>
+                                    <option value="2">Alfredo Sauce</option>
+                                    <option value="3">BBQ Sauce</option>
+                                </select></li>
+                            <li class="list-group-item"> How Much?
+                                <select class="custom-select">
+                                    <option selected>Normal</option>
+                                    <option value="1">Light</option>
+                                    <option value="2">Extra</option>
+                                </select></li>
+                        </ul>
+                        <br>
+                        <br>
+                        <div class="btn-group" role="group" aria-label="Basic example">
+                            <button type="button" class="btn btn-primary">Previous</button>
+                            <button type="button" class="btn btn-primary">Next</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                    <div class="card">
+                        <div class="card-header">
+                            Choose Toppings
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-group">
+                                <li class="list-group-item active">Chose Meats</li>
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                        <label class="custom-control-label" for="customCheck1">Beef</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                        <label class="custom-control-label" for="customCheck1">Ham</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                        <label class="custom-control-label" for="customCheck1">Philly Steak</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                        <label class="custom-control-label" for="customCheck1">Bacon</label>
+                                    </div>
+                            </ul>
+                            <ul class="list-group">
+                                <li class="list-group-item active">Sauce</li>
+                                <li class="list-group-item"> What Type?
+                                    <select class="custom-select">
+                                        <option selected> Robust Inspired Tomato Sauce</option>
+                                        <option value="1">Marinara Sauce</option>
+                                        <option value="2">Alfredo Sauce</option>
+                                        <option value="3">BBQ Sauce</option>
+                                    </select></li>
+                                <li class="list-group-item"> How Much?
+                                    <select class="custom-select">
+                                        <option selected>Normal</option>
+                                        <option value="1">Light</option>
+                                        <option value="2">Extra</option>
+                                    </select></li>
+                            </ul>
+                            <br>
+                            <br>
+                            <div class="btn-group" role="group" aria-label="Basic example">
+                                <button type="button" class="btn btn-primary">Previous</button>
+                                <button type="button" class="btn btn-primary">Next</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+</body>
+</html>
