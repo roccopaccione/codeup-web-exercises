@@ -19,8 +19,8 @@
 // var total = (answer1 *= 3) + (answer2 *= 3) + (answer3 *= 3);
 // alert("The total amount is $" + total);
 
-var Bgreeting = "Suppose you're working as a contractor for 3 companies: Google, Amazon, and Facebook. Each pays a different rate per hour. You have a total of 20 hrs to work this week and you cannot work more than 10 at one company. Use your hours wisely.";
-alert(Bgreeting);
+var greeting = "Suppose you're working as a contractor for 3 companies: Google, Amazon, and Facebook. Each pays a different rate per hour. You have a total of 20 hrs to work this week and you cannot work more than 10 at one company. Use your hours wisely.";
+alert(greeting);
 var google = "Google pays you $400 per hour, How many hours do you wish to work for Google (max = 10)";
 answer1 = prompt(google);
 var amazon = "Amazon pays you $380 per hour, How many hours do you wish to work for Amazon (max = 10)";
