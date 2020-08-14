@@ -138,19 +138,19 @@ if (numberInput > 10) {
 
 
 //TODO: Refactor todo#1 as a function named checkIfGameIsOver, that accepts numberOfLives and returns "Sorry, game over" if numberOfLives is 0, else return "Next Level!.
-
-function checkIfGameIsOver(lives) {
-    if (lives === 0) {
-        alert("Sorry, game over");
-
-    } else {
-        alert("Next, level!");
-    }
-}
-
-checkIfGameIsOver(0);
-
- */
+//
+// function checkIfGameIsOver(lives) {
+//     if (lives === 0) {
+//         alert("Sorry, game over");
+//
+//     } else {
+//         alert("Next, level!");
+//     }
+// }
+//
+// checkIfGameIsOver(0);
+//
+//  */
 
 //TODO: Write a confirm asking the user if they are 13 years of age or older. If they are, alert "You may proceed", if they are not, alert "Sorry, you are not able to proceed"
 //
@@ -217,19 +217,21 @@ checkIfGameIsOver(0);
 
 // ================ NESTED STATEMENTS ===============
 //TODO Together: If user is under 15, they are not eligible for a learners permit, else they are. If they are eligible, check age. If they are 15 they are eligible for a learners permit, if they are 16 or older and have a permit, they are eligible for license, if they are 16 or older and do not have a permit, they are not eligble for a license.
-var age = 16;
-var hasPermit = true;
-if (age < 15) {
-    alert("You are not eligible for a learner's permit.")
-} else {
-    if (age === 15) {
-        alert("You are eligible for a learner's permit.")
-    }else if (age >= 16 && hasPermit) {
-        alert("You are eligible for a license.")
-    }else if (age >= 16 && !hasPermit) {
-        alert("You are not eligible for a license.")
-    }
-}
+
+
+// var age = 16;
+// var hasPermit = true;
+// if (age < 15) {
+//     alert("You are not eligible for a learner's permit.")
+// } else {
+//     if (age === 15) {
+//         alert("You are eligible for a learner's permit.")
+//     }else if (age >= 16 && hasPermit) {
+//         alert("You are eligible for a license.")
+//     }else if (age >= 16 && !hasPermit) {
+//         alert("You are not eligible for a license.")
+//     }
+// }
 
 // ================ TERNARY STATEMENT ================
 //TODO Together: Regular way - rewrite as ternary
@@ -245,7 +247,9 @@ if (age < 15) {
 // console.log(message);
 
 //WRITE YOUR TERNARY STATEMENT HERE!
-
+// (success) ? message = "Operation was successful." : message = "Oops, something went wrong.";
+//
+// console.log(message);
 
 //TODO: Refactor the following conditional as a ternary
 
@@ -260,13 +264,40 @@ if (age < 15) {
 // console.log(weatherMessage);
 
 //WRITE YOUR TERNARY STATEMENT HERE!
-
+//
+// function checkIfGameIsOver(lives) {
+//     if (lives === 0) {
+//         alert("Sorry, game over");
+//
+//     } else {
+//         alert("Next, level!");
+//     }
+// }
+//
+// checkIfGameIsOver(0);
+//
+// function checkIfGameIsOver(numberOfLives) {
+//     alert((numberOfLives === 0) ? "Sorry, game over." : "Next Level!");
+// }
+//
+// checkIfGameIsOver(5);
 
 // =============== SWITCH STATEMENT ================
-//TODO Together:
+//TODO Together:\
+//
+// switch (condition){
+//     case 0:
+//         // Code here for case 0
+//         break;
+//     case 1:
+//         // Code here for case 1
+//         break;
+//     default:
+//         // Default case is similar to an else
+// }
 
-// var pizzaPreference = prompt("What kind of pizza do you like?");
-// console.log("User pizza input: " + pizzaPreference);
+var pizzaPreference = prompt("What kind of pizza do you like?");
+console.log("User pizza input: " + pizzaPreference);
 //
 // if (pizzaPreference === "pineapple and hot sauce") {
 //     alert("What a coincidence, that's my favorite!");
@@ -277,9 +308,43 @@ if (age < 15) {
 // } else {
 //     alert(pizzaPreference + " isn't my favorite, but let's order some!");
 // }
+function startOrder(pizzaPreference) {
+    switch (pizzaPreference) {
+        case "pineapple and hot sauce":
+            alert("What a coincidence, that is my favorite!");
+            break;
+        case "cheese":
+            alert("Just plain old cheese? okay...");
+            break;
+        case "ham":
+            alert("Ham is easy to spell and awesome!");
+            break;
+        default:
+            alert(pizzaPreference + " isn't my favorite, but let's order some!");
+    }
+}
 
+startOrder(pizzaPreference);
 
 //TODO: Write a switch statement that evaluates weather as the condition. Check for "rainy", "sunny", "snow", and a default case.
+function whatIsTheWeather(weather) {
+    switch (weather) {
+        case "rainy":
+            alert("It's raining outside");
+            break;
+        case "sunny":
+            alert("It's sunny outside");
+            break;
+        case "snow":
+            alert("It's snowing outside!");
+            break;
+        default:
+            alert("Check in later for weather!")
+    }
+}
+
+whatIsTheWeather("snow");
+
 
 
 //TODO: Rewrite the intersection function from earlier as a switch statement.
