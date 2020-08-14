@@ -35,7 +35,7 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * You should see a different message every time you refresh the page
  */
 
-var color = randomColor;
+
 
 function analyzeColor(color) {
     if (color === "red") {
@@ -48,8 +48,8 @@ function analyzeColor(color) {
         alert("I don't know anything about " + color);
     }
 }
-console.log(color);
-console.log(analyzeColor(color));
+console.log(randomColor);
+console.log(analyzeColor(randomColor));
 
 /**
  * TODO:
@@ -73,7 +73,7 @@ function refactorAnalyzeColor(chooseColor) {
             alert("The sky is Blue")
             break;
         default:
-            alert("Sorry I don't know anything about " + color);
+            alert("Sorry I don't know anything about " + chooseColor);
             break;
     }
 }
@@ -154,3 +154,36 @@ var luckyNumber = Math.floor(Math.random() * 6);
  * Can you refactor your code to use functions?
  * HINT: The way we prompt for a value could be improved
  */
+var welcomeMessage = confirm("Would you like to enter a number?");
+
+function whatsWithYourNumber(welcomeMessage) {
+    if (isEven(welcomeMessage));
+
+        else if (numhunnid(welcomeMessage)) {
+
+        } else if (isPositiveOrNegative(welcomeMessage)) {
+
+        } else {
+            alert("Try again!!")
+        }
+
+}
+console.log(whatsWithYourNumber());
+
+function isEven(num) {
+    if (num % 2 === 0) {
+        alert(num + " is an even number!")
+    } else {
+        alert(num + " is an ODD number!")
+    }
+}
+function numhunnid(num) {
+    return num + 100;
+}
+function isPositiveOrNegative(num) {
+    if (num > 0) {
+        alert(num + "is a positive number!")
+    } else {
+        alert(num + "is a negative number!")
+    }
+}
