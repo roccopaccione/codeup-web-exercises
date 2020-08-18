@@ -1,15 +1,15 @@
 // Multiplication Table Tests
 // TODO: Use these existing tests to build the returnMultiplicationTable function
-describe("returnMultiplicationTable", function() {
-    it("should be defined", function() {
+describe("returnMultiplicationTable", function () {
+    it("should be defined", function () {
         expect(returnMultiplicationTable).toBeDefined()
     });
-    it("should return a string when passed one integer", function() {
+    it("should return a string when passed one integer", function () {
         expect(typeof returnMultiplicationTable(1)).toEqual("string");
         expect(typeof returnMultiplicationTable(10)).toEqual("string");
         expect(typeof returnMultiplicationTable(7)).toEqual("string");
     })
-    it("should return the correct string output when passed one integer", function() {
+    it("should return the correct string output when passed one integer", function () {
         expect(returnMultiplicationTable(7)).toEqual("7 x 1 = 7\n" +
             "7 x 2 = 14\n" +
             "7 x 3 = 21\n" +
@@ -25,17 +25,17 @@ describe("returnMultiplicationTable", function() {
 
 
 // Random Number Even/Odd Messages Tests
-describe("returnEvenOddMessage", function() {
-    it("should be defined", function() {
+describe("returnEvenOddMessage", function () {
+    it("should be defined", function () {
         // TODO: add an assertion to verify that the function is defined
         expect(returnEvenOddMessage).toBeDefined()
 
     });
-    it("should return a string when passed an integer", function() {
+    it("should return a string when passed an integer", function () {
         // TODO: add an assertion verifying that the function returns a string when passed an integer
         expect(typeof returnEvenOddMessage(8)).toEqual("string");
     });
-    it("should return the correct message when passed an integer", function() {
+    it("should return the correct message when passed an integer", function () {
         // TODO: add several assertions that verify the correct string output for a given integer input
         expect(typeof returnEvenOddMessage(10)).toEqual("string");
         expect(typeof returnEvenOddMessage(5)).toEqual("string");
@@ -45,22 +45,31 @@ describe("returnEvenOddMessage", function() {
     });
 });
 
-describe("returnTenEvenOddMessages", function() {
+describe("returnTenEvenOddMessages", function () {
     // TODO: add a test to verify that the function is defined
     it('should be defined', function () {
         expect(returnTenEvenOddMessages).toBeDefined()
 
     });
 
-    it("should return an output that ends with the word 'odd' or 'even'", function() {
+    it("should return an output that ends with the word 'odd' or 'even'", function () {
         var output = returnTenEvenOddMessages();
         // TODO: add an assertion to verify that the function output ends with either "even" or "odd"
-        expect(returnTenEvenOddMessages).toEqual()
+        expect(returnTenEvenOddMessages(123)).toEqual("123 is odd");
+        expect(returnTenEvenOddMessages(70)).toEqual("70 is even");
+        expect(returnTenEvenOddMessages(25)).toEqual("25 is odd");
+        expect(returnTenEvenOddMessages(50)).toEqual("50 is even");
+        expect(returnTenEvenOddMessages(63)).toEqual("63 is odd");
+        expect(returnTenEvenOddMessages(187)).toEqual("187 is odd");
+        expect(returnTenEvenOddMessages(199)).toEqual("199 is odd");
+        expect(returnTenEvenOddMessages(89)).toEqual("89 is odd");
+        expect(returnTenEvenOddMessages(122)).toEqual("122 is even");
+        expect(returnTenEvenOddMessages(186)).toEqual("186 is even");
     });
-    it("should return an output with 10 lines", function() {
+    it("should return an output with 10 lines", function () {
         expect(returnTenEvenOddMessages().split("\n").length).toEqual(10);
     });
-    it("should return a message with the expected numbers", function() {
+    it("should return a message with the expected numbers", function () {
         /**
          * This function compares two arrays (the numbers in the returnTenEvenOddMessages output and the array of expected numbers)
          * @returns {boolean} indicates if all numbers from the function output fall within the expected number range
@@ -77,16 +86,22 @@ describe("returnTenEvenOddMessages", function() {
         }
 
         // TODO: assert that the outputContainsExpectedNumbers function returns true
-
+        expect(outputContainsExpectedNumbers()).toEqual(true);
     });
 });
 
 
 // Number Sail Tests
-describe("returnNumberSail", function() {
+describe("returnNumberSail", function () {
     // TODO: include a test to verify that the function is defined
+    it("returnNumberSail should be a defined function", function () {
+        expect(typeof returnNumberSail()).toBe("function");
+    })
 
     // TODO: include a test to verify that the function output is a string
+    it('returnNumberSail() should output a string', function () {
+        expect(typeof returnNumberSail()).toBe("string");
+    });
 
     // TODO: include a test to verify that the function output matches the following value
     var expectedValue = "1\n" +
@@ -98,6 +113,7 @@ describe("returnNumberSail", function() {
         "7777777\n" +
         "88888888\n" +
         "999999999";
+
 });
 
 
