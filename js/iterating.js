@@ -58,8 +58,16 @@
      */
     var shapes = ['square', 'rectangle', 'triangle', 'rhombus', 'dodecahedron', 'circle'];
 
-    console.log(shapes[0] + ' returns first.');
-    console.log(shapes[1] + ' returns second.');
-    console.log(shapes[5] + ' returns last.');
-
+    var first = function(shapes){
+        return shapes[0];
+    }
+    var second = function(shapes){
+        return shapes[1];
+    }
+    var last = function(shapes){
+        return shapes[shapes.length-1];
+    }
+    console.log(first(shapes));
+    console.log(second(shapes));
+    console.log(last(shapes));
 })();
