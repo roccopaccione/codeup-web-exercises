@@ -28,7 +28,8 @@
 
     console.log(breakPlanetString);
 
-    // var listPlanetString = planetsArray.join("<ul>'<li>'");
-    // console.log(listPlanetString);
+    // var planetsList = ("<ul><li>" + breakPlanetString.join("</li><li>") + "</li></ul>");
+    //
+    // console.log(planetsList);
 
 })();
