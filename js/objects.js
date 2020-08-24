@@ -15,7 +15,7 @@
       firstName: "Rocco",
       lastName: "Paccione",
       sayHello: function() {
-          console.log("Hello from " + person.firstName + person.lastName + "!")
+          console.log("Hello from " + this.firstName + this.lastName + "!")
       }
     };
     console.log(person.firstName);
@@ -139,8 +139,8 @@
      *      ---
      *      ...
      */
-    books.forEach(function (book) {
-         return console.log("Book # " + books.indexOf(book)+ " \n " + "Title: " + book.title + " \n " + "Author: " + book.author.firstName + " " + book.author.lastName);
+    books.forEach(function (book, i) {
+         console.log("Book # " + (i + 1) + " \n " + "Title: " + book.title + " \n " + "Author: " + book.author.firstName + " " + book.author.lastName + "\n" + " --- ");
 
     })
 
@@ -154,7 +154,13 @@
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
+    var title = prompt("Please enter your favorite book!");
+    var author = prompt("Now, enter the author of " + title + ".")
 
+    function createBook(title, author) {
+        return alert("Your Book!" + "\n" + "Book Title: " + title + "\n" + "Book's Author: " + author + "\n" + "I'll take your word for it that " + title + " is an amazing book!")
+    }
 
+    console.log(createBook(title, author));
 
 })();
