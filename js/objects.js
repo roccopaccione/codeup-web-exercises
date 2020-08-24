@@ -158,9 +158,12 @@
     var author = prompt("Now, enter the author of " + title + ".")
 
     function createBook(title, author) {
-        return alert("Your Book!" + "\n" + "Book Title: " + title + "\n" + "Book's Author: " + author + "\n" + "I'll take your word for it that " + title + " is an amazing book!")
+        alert("Your Book!" + "\n" + "Book Title: " + title + "\n" + "Book's Author: " + author + "\n" + "I'll take your word for it that " + title + " is an amazing book!");
+        return title + author;
     }
 
     console.log(createBook(title, author));
+
+    books.push(createBook(title, author));
 
 })();
