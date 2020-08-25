@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--<h1>List One</h1>-->
+<!--&lt;!&ndash;<ul>&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;    <li class="a list-one-item">List 1, Item 1</li>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;    <li class="b list-one-item">List 1, Item 2</li>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;</ul>&ndash;&gt;-->
+<!--<h1>List Two</h1>-->
+<!--<ul>-->
+<!--&lt;!&ndash;    <li class="a list-two-item">List 2, Item 1</li>&ndash;&gt;-->
+<!--&lt;!&ndash;    <li class="b list-two-item">List 2, Item 2</li>&ndash;&gt;-->
+<!--</ul>-->
+
+<form name="login">
+    <div>
+        <label for="text">Enter some tes</label>
+        <input id="text" name="sometext" type="text" value="user">
+    </div>
+</form>
+<br>
+<button onclick="savetext()">Save Text</button>
+<br><br>
+<h1 id="out"></h1>
+<script>
+    "use strict";
+    let hout = document.getElementById('out');
+    (function() {
+        // get the "username" input
+        var text = document.forms.login.sometext;
+        // log the value of the "username" input
+        hout.innerText = text.value;
+    })();
+    function savetext() {
+        var text = document.forms.login.sometext;
+        console.log(text.value)
+        hout.innerText = text.value;
+    }
+</script>
+</body>
+</html>
