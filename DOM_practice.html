@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
-<body>
 <!--<h1>List One</h1>-->
 <!--&lt;!&ndash;<ul>&ndash;&gt;-->
 <!--&lt;!&ndash;&lt;!&ndash;    <li class="a list-one-item">List 1, Item 1</li>&ndash;&gt;&ndash;&gt;-->
@@ -16,30 +15,80 @@
 <!--&lt;!&ndash;    <li class="b list-two-item">List 2, Item 2</li>&ndash;&gt;-->
 <!--</ul>-->
 
-<form name="login">
-    <div>
-        <label for="text">Enter some tes</label>
-        <input id="text" name="sometext" type="text" value="user">
-    </div>
-</form>
-<br>
-<button onclick="savetext()">Save Text</button>
-<br><br>
-<h1 id="out"></h1>
+<!--<form name="login">-->
+<!--    <div>-->
+<!--        <label for="text">Enter some tes</label>-->
+<!--        <input id="text" name="sometext" type="text" value="user">-->
+<!--    </div>-->
+<!--</form>-->
+<!--<br>-->
+<!--<button onclick="savetext()">Save Text</button>-->
+<!--<br><br>-->
+<!--<h1 id="out"></h1>-->
+<!--<script>-->
+<!--    "use strict";-->
+<!--    let hout = document.getElementById('out');-->
+<!--    (function() {-->
+<!--        // get the "username" input-->
+<!--        var text = document.forms.login.sometext;-->
+<!--        // log the value of the "username" input-->
+<!--        hout.innerText = text.value;-->
+<!--    })();-->
+<!--    function savetext() {-->
+<!--        var text = document.forms.login.sometext;-->
+<!--        console.log(text.value)-->
+<!--        hout.innerText = text.value;-->
+<!--    }-->
+<!--</script>-->
+<!--<h1 id="main-heading">Hello World!</h1>-->
+<!--<div id="main-section">-->
+<!--    <p id="demo">Paragraph 1</p>-->
+<!--    <p id="demoText">Paragraph 2</p>-->
+<!--</div>-->
+<!--<script>-->
+
+
+<!--    "use strict";-->
+<!--    (function() {-->
+<!--        // Get the main heading h1 by id-->
+<!--        var demo = document.getElementById('demo');-->
+
+<!--        console.log(demo.innerHTML); // Prints Hello World!-->
+
+<!--        // Assign a new value to the inner HTML of the main heading-->
+<!--        demo.innerHTML = "<b>Hello IO!</b>";-->
+
+<!--        console.log(demo.innerHTML); // Prints Hello Codeup!-->
+
+<!--        // Get the main section div by id-->
+<!--        var demoText = document.getElementById('demoText');-->
+
+<!--        console.log(demoText.innerHTML);-->
+
+<!--        demoText.innerText = "<b>Hello IO!</b>"-->
+
+<!--        console.log(demoText.innerText);-->
+<!--        // Prints-->
+<!--        // <p>Paragraph 1</p>-->
+<!--        // <p>Paragraph 2</p>-->
+<!--    })();-->
+
+
+<body bgcolor="#faebd7">
+<p id="p1">To be or not to be?</p>
+<p id="p2" data-playname="Hamlet">That is the question.</p>
 <script>
     "use strict";
-    let hout = document.getElementById('out');
     (function() {
-        // get the "username" input
-        var text = document.forms.login.sometext;
-        // log the value of the "username" input
-        hout.innerText = text.value;
+        let p1 = document.getElementById("p1");
+        p1.setAttribute('style', 'font-size: 4rem')
+        // Change the style of p1 to 'font-size: 4rem'
+        // Get the data-* attribute from p2
+        let p2 = document.getElementById('p2')
+        let dataAttr = p2.getAttribute('data-playname')
+        // Print the data-* attribute on the console log.
+        alert(dataAttr);
     })();
-    function savetext() {
-        var text = document.forms.login.sometext;
-        console.log(text.value)
-        hout.innerText = text.value;
-    }
 </script>
 </body>
 </html>
