@@ -9,6 +9,7 @@
 <button type="button" onclick="reloadFromCache()">Refresh!</button>
 <button type="button" onclick="reloadFromServer()">Refresh!</button>
 <h2>Hi</h2>
+<p id="demo"></p>
 <script src="pushup_js_Aug_25th.js">
     function reloadFromCache() {
         location.reload();
@@ -18,6 +19,12 @@
         location.reload(true);
         alert("from server")
     }
+    (function() {
+        var paragraph = document.getElementById('demo');
+        paragraph.innerHTML = 'IO Rocks!';
+        console.log(paragraph.outerHTML);
+    })();
+</script>
 </script>
 </body>
 </html>
