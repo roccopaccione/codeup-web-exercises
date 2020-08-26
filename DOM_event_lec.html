@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM Event</title>
+</head>
+<body>
+<button id="me">Click Me!</button>
+<button id="unMe">Remove Event Listener</button>
+<script>
+
+    'use strict';
+    var listenToMe = function(event) {
+        alert("You clicked me!");
+    }
+    document.getElementById('me').addEventListener('click', listenToMe);
+
+    var remove = function(event) {
+        document.getElementById('me').removeEventListener('click', listenToMe);
+        alert('Event listener has been removed.')
+    }
+
+    document.getElementById('unMe').addEventListener('click', remove);
+
+
+</script>
+</body>
+</html>
