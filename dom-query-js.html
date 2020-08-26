@@ -56,25 +56,33 @@
 
         // TODO: Set text color on every other list item to grey
         // TODO: Set text color of li with dbid = 1 to blue
-       var listColor = function() {
-           if ((i+1)%2 == 0) {
-               for (var i = 1; i > listItems.length; i++) {
-                   listItems[i].style.color = "grey";
-               }
-           }
-           if (listItems[i].hasAttribute('data-dbid')) {
-               if (listItems[i].getAttribute('data-dbid') === '1') {
-                   listItems[i].style.color = 'blue';
-               }
-           }
-       }
+        var listenListColor = function (event) {
+            var listColor = function() {
+                if ((i+1)%2 == 0) {
+                    for (var i = 1; i > listItems.length; i++) {
+                        listItems[i].style.color = "grey";
+                    }
+                }
+                if (listItems[i].hasAttribute('data-dbid')) {
+                    if (listItems[i].getAttribute('data-dbid') === '1') {
+                        listItems[i].style.color = 'blue';
+                    }
+                }
+            }
+            console.log(listColor());
+        }
+        document.getElementById('colorList').addEventListener('click', listenListColor);
+
 
 
         // TODO: Uncomment the next line and get all elements with class name sub-paragraph
         var subParagraphs = document.getElementsByClassName("sub-paragraph");
 
         // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
-        subParagraphs[0].innerHTML = "Mission Accomplished!"
+        var listenParagraph = function (event) {
+            subParagraphs[0].innerHTML = "Mission Accomplished!"
+        }
+        document.getElementById('missionText').addEventListener('click', listenParagraph);
     })();
 </script>
 </body>
