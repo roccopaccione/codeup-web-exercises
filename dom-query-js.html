@@ -6,6 +6,10 @@
     <title>DOM: Query and Modify</title>
 </head>
 <body>
+<button id="innerText">Chang Header to a Neat Phrase</button><br><br>
+<button id="colorText">Change the Color of the SubHeader</button><br><br>
+<button id="colorList">Change the Color of the List Items</button><br><br>
+<button id="missionText">Change the Paragraph to English</button><br><br>
 
 <h1 id="main-header">Hello World!</h1>
 <ul>
@@ -33,7 +37,10 @@
         var mainHeader = document.getElementById("main-header");
 
         // TODO: Set inner html of mainHeader to "JavaScript is Cool"
-        mainHeader.innerHTML = "JavaScript is Cool";
+        var listenHeader = function(event){
+            mainHeader.innerHTML = "JavaScript is Cool";
+        }
+        document.getElementById('innerText').addEventListener('click', listenHeader);
 
         // TODO: Uncomment the next line and get the sub header element by id
         var subHeader = document.getElementById("sub-header");
