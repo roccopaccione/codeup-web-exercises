@@ -57,9 +57,8 @@
         // TODO: Set text color on every other list item to grey
         // TODO: Set text color of li with dbid = 1 to blue
         var listenListColor = function (event) {
-            var listColor = function() {
-                if ((i+1)%2 == 0) {
-                    for (var i = 1; i > listItems.length; i++) {
+            for (var i = 1; i > listItems.length; i++) {
+                if ((i+1)%2 == 0){
                         listItems[i].style.color = "grey";
                     }
                 }
@@ -68,8 +67,6 @@
                         listItems[i].style.color = 'blue';
                     }
                 }
-            }
-            console.log(listColor());
         }
         document.getElementById('colorList').addEventListener('click', listenListColor);
 
