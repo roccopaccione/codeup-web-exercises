@@ -12,8 +12,9 @@ mapboxgl.accessToken = MAPBOX_TOKEN;
 var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/streets-v9',
-    zoom: 11.15,
-    center: [-97.74956, 30.2488412]
+    center: [-97.74956, 30.2488412],
+    zoom: 11.15
+
 });
 
 //favorite Restaurants Icons/markers
