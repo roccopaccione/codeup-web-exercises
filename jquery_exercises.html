@@ -4,27 +4,26 @@
     <title>Test Page</title>
 </head>
 <body>
-<h1>Example Page</h1>
-<div class="important">
+<h1 id="codeup">Importance</h1>
+<div>
     <h3>NOTICE</h3>
-    <p>This is an important message!</p>
+    <p id="not-important">This is an important message!</p>
 </div>
-<div class="not-important">
-    <h2>Lorem Ipsum</h2>
-    <p>
-        Lorem ipsum dolor sit amet, incididunt ut <span class="important">labore et dolore magna aliqua.</span>, quis ut aliquip ex ea commodo.
-    </p>
-</div>
-<p class="important">This is also very important.</p>
+    <h1 id="important">My Favorite Artists</h1>
+<ul>
+    <li class="codeup">The Beatles</li>
+    <li class="codeup">Nirvana</li>
+    <li class="codeup">Pavement</li>
+    <li class="codeup">The Beach Boys</li>
+    <li>David Bowie</li>
+</ul>
 <script src="js/jquery.js"></script>
 <script>
     (function(){ // IFEE
         "use strict"
         $().ready(function() {
-            $('.important').css('background-color', '#ff0');
-        });
-        $().ready(function() {
-            $('.not-important').css('background-color', '#0f0');
+            $('.codeup').html('There was a great band here');
+            $('.codeup').css('border', '1px solid #f00');
         });
     })();
 </script>
