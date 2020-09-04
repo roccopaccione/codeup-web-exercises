@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Konami Code</title>
+</head>
+<body>
+<img src="img/luigi's_mansion.png" alt="Luigi's Mansion">
+<h1>Konami Code</h1>
+<main>
+    <label for="textfield">
+        <input type="password" id="textfield" name="textfield">
+    </label>
+</main>
+<script src="js/jquery.js"></script>
+<script>
+    (function () {
+        "use strict";
+        let konami = []
+        $(document).keyup(function (event) {
+            const hiddenEgg = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65]
+            konami.push(event.keyCode);
+            console.log(konami);
+            if (JSON.stringify(konami) === (JSON.stringify(hiddenEgg))) {
+                alert('You have 30 Lives!');
+            }else if((JSON.stringify(konami) !== (JSON.stringify(hiddenEgg)){
+                alert('Sorry No Extra Lives For You');
+            }
+        })
+    })();
+
+
+</script>
+</body>
+</html>
