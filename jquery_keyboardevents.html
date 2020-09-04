@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>Please type something into this form:</p>
+<form>
+    <input type="text" id="textfield" name="textfield" placeholder="Type Here"/>
+</form>
+<script src="js/jqueryCdn.js"></script>
+<script>
+    (function () { // IFEE
+        "use strict"
+        $().ready(function () {
+            $('#textfield').keyup(function() {
+                alert('A key was pushed down!');
+            });
+        });
+    })();
+</script>
+</body>
+</html>
