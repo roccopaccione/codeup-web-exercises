@@ -3,13 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title>JQuery FAQ</title>
-    <style>
-        .hidden {
-            display: none;
-            visibility: hidden;
-
-        }
-    </style>
 </head>
 <body>
 <dl>
@@ -40,8 +33,11 @@
     (function(){
         "use strict"
 
-        $(".invisible").ready(function(){
-            $(this).addClass('.hidden')
+        $(document).ready(function(){
+            $(".invisible").click(function(event){
+                event.hide();
+                $('.invisible').toggleClass({visibility:"hidden"})
+            });
         })
     })();
 </script>
