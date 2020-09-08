@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajax Practice</title>
+</head>
+<body>
+<h2 id="h1-1">This is a test page</h2>
+<div id="div1"></div>
+<script src="js/jquery.js"></script>
+<script>
+    (function(){
+        "use strict"
+        $().ready(function(){
+            $.get("data/colors.json").done(function(data, status, item) {
+                alert("AJAX call completed successfully!");
+                console.log("request status: " + status);
+                console.log("Data returned from server: ");
+                console.log(data);
+                var innerHTML = '<br>';
+                data.forEach(function() {
+                    innerHTML += 'The code for ' + item['color'] + ' is ' + item['value'] + '<br>\n'
+                })
+                innerHTML += '<br>\n';
+                $('#div1').html(innerHTML);
+            })
+        })
+
+    })();
+</script>
+</body>
+</html>
