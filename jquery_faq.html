@@ -5,7 +5,12 @@
     <title>JQuery FAQ</title>
 </head>
 <body>
-<button class="appear">Click for Answer</button>
+<div>
+    <h1>Would you like to sign up for our newsletter?</h1>
+    <span> X </span>
+</div>
+<br>
+<button class="appear">Click for Answers!</button>
 <dl>
     <dt>Who is the director of the National Park Service?</dt>
     <dd class="invisible">Margaret Everson, Counselor to the Secretary, is exercising the delegated authority of the Director of the National Park Service.</dd>
@@ -81,20 +86,25 @@
             $('.invisible').css('visibility', 'hidden');
         });
         $('.appear').click(function(){
-            $('.invisible').css('visibility', 'visible')
+            $('.invisible').css('visibility', 'visible');
         });
         $('dt').click(function(){
-            $(this).css('background-color', '#ff0')
+            $(this).css('background-color', '#ff0');
         });
         $('#facts').click(function(){
-            $('ul').find('li:last').css('background-color', '#ff0')
+            $('ul').find('li:last').css('background-color', '#ff0');
         });
+        $('ul').hide();
         $('h3').click(function(){
-           $(this).next().children().css('font-weight','bold')
+           $(this).next().children().css('font-weight','bold');
+           $(this).next('ul').slideToggle(1500);
         });
         $('li').click(function(){
-            $('ul').children().first().css('color','#00f')
-        })
+            $(this).parent().children('li').first().css('color','#00f');
+        });
+        $('span').click(function (){
+            $('div').css('visibility', 'hidden');
+        });
 
     })();
 </script>
