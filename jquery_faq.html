@@ -85,9 +85,15 @@
         });
         $('dt').click(function(){
             $(this).css('background-color', '#ff0')
-        })
-        $('#').click(function(){
-            $('ul').last('li').css('background-color', '#ff0')
+        });
+        $('#facts').click(function(){
+            $('ul').find('li:last').css('background-color', '#ff0')
+        });
+        $('h3').click(function(){
+           $(this).next().children().css('font-weight','bold')
+        });
+        $('li').click(function(){
+            $(this).first().css('color','#00f')
         })
 
     })();
