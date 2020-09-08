@@ -47,6 +47,31 @@
     <dd class="invisible">
         <a href="https://www.nps.gov/aboutus/visitation-numbers.htm" target="_blank">View a list of the most-visited sites in the National Park Service</a>.</dd>
 </dl>
+<section>
+    <button id="facts">Highlight the last fact!!!!</button>
+    <h3>Yosemite National Park</h3>
+    <ul>
+        <li>The American Indians who live in Yosemite are called the Ahwahneechee Indians</li>
+        <li>Yosemite National Park is visited by over 3.5 million people every year</li>
+        <li>Yosemite Park was the first area of land set aside by the US government for preservation and protection</li>
+        <li>Though Half Dome and El Capitan are Yosemite’s most well known summits, Mt. Lyell is actually Yosemite’s highest peak
+        </li>
+    </ul>
+    <h3>Sequoia National Park</h3>
+    <ul>
+        <li>The first inhabitants known to have inhabited the area now designated as Sequoia National Park were the Monache Indians</li>
+        <li>Sequoia National Park was the second national park established in the United States - in 1890. It was established to protect the region's giant trees from logging</li>
+        <li>The most massive tree in the world - the General Sherman Tree - is located in the Giant Forest in Sequoia National Park</li>
+        <li>Sequoia trees are naturally fire resistant</li>
+    </ul>
+    <h3>Grand Teton National Park</h3>
+    <ul>
+        <li>The Tetons are the youngest range in the Rocky Mountains and some of the youngest mountains in the world</li>
+        <li>Eight peaks towering above 12,000 feet exist within the park. The highest peak, the Grand Teton, rises 13,770 feet above sea level</li>
+        <li>Archeologists have evidence that the first humans arrived in the Jackson Hole valley about 11,000 years ago. They lived in the valley from spring to fall but left during the winters</li>
+        <li>Earthquakes gave rise to the 40-mile-long Teton Range, which sits on a fault line</li>
+    </ul>
+</section>
 <script src="js/jquery.js"> </script>
 <script>
     (function(){
@@ -60,6 +85,9 @@
         });
         $('dt').click(function(){
             $(this).css('background-color', '#ff0')
+        })
+        $('#').click(function(){
+            $('ul').last('li').css('background-color', '#ff0')
         })
 
     })();
