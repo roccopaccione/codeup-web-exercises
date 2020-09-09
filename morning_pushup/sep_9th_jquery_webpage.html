@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Morning Pushup</title>
+</head>
+<body>
+<input type="text" id="inMessage" placeholder="Write a morning message!">
+<br>
+<button type="button" id="button">Push to start your morning</button>
+<div id="output">
+</div>
+
+
+
+
+<script src="/js/jquery.js">
+    (function(){
+        "use strict"
+        $(document).ready(function(){
+            $("#inMessage").html($("#output").val())
+        })
+    })();
+</script>
+
+</body>
+</html>
