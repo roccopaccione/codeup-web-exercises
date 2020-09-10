@@ -5,14 +5,36 @@
     <title>Ajax Blog</title>
 </head>
 <body>
-<h2>The Life of Rocco</h2>
+<h2>Blogz</h2>
+<form method="post" action="data/blog.json">
+    <input type="text" placeholder="Blog Title Goes Here">
+    <textarea name="blog" id="blogBody" cols="30" rows="5" placeholder="Content Goes Here"></textarea>
+</form>
 <div id="posts"></div>
 
 
 <script src="js/jquery.js">
-    (function(){ // IFFY
-
-    })();
+(function(){ // IFFY
+    let dataUpdate = function(){
+        $(document).ready(function(){
+            $.ajax("data/blog.json", {
+                type: "GET"
+            }).done(function(data){
+                console.log(data);
+                for(var i = 0; i < data.length; i++){
+                    $("#posts").append(
+                        '<div>' +
+                        '<p>' + data[i].date + '</p>' + '<br>' +
+                        '<h4>' + data[i].title + '</h4>' + '<br>' +
+                        '<article>' + data[i].content + '<br>' +
+                        data[i].categories + '</article>' +
+                        '</div>'
+                    )
+                }
+            });
+        });
+    }
+})();
 
 </script>
 </body>
