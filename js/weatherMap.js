@@ -19,7 +19,7 @@ $(document).ready(function(){
             if (data.list[i].dt_txt.includes('00:00:00')){
                 $('#openWeather').append(
                     '<h4 class="col-3">' + 'City Name: ' + data.city.name +'</h4>' +
-                    '<img>' + 'http://openweathermap.org/img/w/[icon].png' + '</img>' +
+                    '<img src="http://openweathermap.org/img/w/[icon].png">' +
                     '<p class="col-3">'  + 'Description: ' + data.list[i].weather[0].description  +'</p>' +
                     '<p class="col-3">'  + 'Humidity: ' + data.list[i].main.humidity  +'</p>' +
                     '<p class="col-3">'  +  'Wind Direction: ' + data.list[i].wind.deg + '</p>' +
