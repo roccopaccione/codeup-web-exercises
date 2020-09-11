@@ -1,6 +1,6 @@
 (function(){
 "use strict"
-    mapboxgl.accessToken = 'pk.eyJ1Ijoicm9jY29wYWNjaW9uZSIsImEiOiJja2VjeDFreGowOXFhMnNtbnNmaDVwY3ZzIn0.REj3GXr03OkYnS-j0zWI0A';
+    mapboxgl.accessToken = MAPBOX_TOKEN;
     var map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/mapbox/streets-v11', // stylesheet location
@@ -19,7 +19,7 @@ $(document).ready(function(){
             if (data.list[i].dt_txt.includes('00:00:00')){
                 $('#openWeather').append(
                     '<h4 class="col-3">' + 'City Name: ' + data.city.name +'</h4>' +
-                    '<img src="http://openweathermap.org/img/w/[icon].png">' +
+                    '<img src="http://openweathermap.org/img/w/' + data.list[i].weather[0].icon + '.png">' +
                     '<p class="col-3">'  + 'Description: ' + data.list[i].weather[0].description  +'</p>' +
                     '<p class="col-3">'  + 'Humidity: ' + data.list[i].main.humidity  +'</p>' +
                     '<p class="col-3">'  +  'Wind Direction: ' + data.list[i].wind.deg + '</p>' +
