@@ -18,13 +18,13 @@ $(document).ready(function(){
         for(var i = 0; i < data.list.length; i++){
             if (data.list[i].dt_txt.includes('00:00:00')){
                 $('#openWeather').append(
-                    '<h4 class="col-3">' + 'City Name: ' + data.city.name +'</h4>' +
-                    '<img src="http://openweathermap.org/img/w/' + data.list[i].weather[0].icon + '.png">' +
-                    '<p class="col-3">'  + 'Description: ' + data.list[i].weather[0].description  +'</p>' +
-                    '<p class="col-3">'  + 'Humidity: ' + data.list[i].main.humidity  +'</p>' +
-                    '<p class="col-3">'  +  'Wind Direction: ' + data.list[i].wind.deg + '</p>' +
-                    '<p class="col-6">'  + 'Wind Speed: ' + data.list[i].wind.speed +'</p>' +
-                    '<p class="col-6">' + 'Pressure: ' + data.list[i].main.pressure  +'</p>' + '<hr>'
+                    '<h4 class="col text-align-center">' + 'City: ' + data.city.name +'</h4>' +
+                    '<img class="" src="http://openweathermap.org/img/w/' + data.list[i].weather[0].icon + '.png" alt="Weather Map">' +
+                    '<p class="col text-align-center">'  + 'Description: ' + data.list[i].weather[0].description  +'</p>' +
+                    '<p class="col text-align-center">'  + 'Humidity: ' + data.list[i].main.humidity  +'</p>' +
+                    '<p class="col text-align-center">'  +  'Wind Direction: ' + data.list[i].wind.deg + '</p>' +
+                    '<p class="col text-align-center">'  + 'Wind Speed: ' + data.list[i].wind.speed +'</p>' +
+                    '<p class="col text-align-center">' + 'Pressure: ' + data.list[i].main.pressure  +'</p>' + '<hr>'
                 )
             }else{
                 console.log(data)
