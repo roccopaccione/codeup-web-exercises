@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Refactor Warmup</title>
+</head>
+<body>
+<script>
+    "use strict";
+
+    const users = [
+        {
+            firstName: "Justin",
+            lastName: "Reich"
+        },
+        {
+            firstName: "Daniel",
+            lastName: "Fryar"
+        },
+        {
+            firstName: "Ryan",
+            lastName: "Orsinger"
+        },
+        {
+            firstName: "Vivian",
+            lastName: "Canalas"
+        }
+    ];
+
+    /**
+     * Refactor this function
+     * @param users
+     * @returns {[]}
+     */
+    const getFullNames = (users) => {
+        let output = [];
+        for (let i = 0; i < users.length; i += 1) {
+            let user = users[i];
+            output.push({
+                name: user.firstName + ' ' + user.lastName
+            });
+        }
+        return output;
+    }
+
+    console.log(getFullNames(users));
+
+</script>
+</body>
+</html>
