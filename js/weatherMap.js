@@ -1,12 +1,24 @@
 (function(){
 "use strict"
     mapboxgl.accessToken = MAPBOX_TOKEN;
-    var map = new mapboxgl.Map({
+    let map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/mapbox/streets-v11', // stylesheet location
         center: [-98.493, 29.42412], // starting position [lng, lat]
         zoom: 9 // starting zoom
     });
+    let marker = new mapboxgl.Marker({
+        draggable: true
+    })
+        .setLngLat([-98.493, 29.42412])
+        .addTo(map)
+
+    function onDragEnd() {
+        let lngLat = marker.getLngLat();
+        console.log(lngLat.lng + " " + lngLat.lat);
+    }
+
+    marker.on('dragend', onDragEnd);
 
 $(document).ready(function(){
     let fiveDayForecast = function(){
@@ -24,11 +36,12 @@ $(document).ready(function(){
                         '<p>' + data.list[i].dt_txt + '</p>' +
                         '<h4 class="mt-2">' + data.city.name +'</h4>' +
                         '<img class="img " src="http://openweathermap.org/img/w/' + data.list[i].weather[0].icon + '.png" alt="Weather Map">' +
-                        '<p class="text-align-center">'  + 'Description: ' + data.list[i].weather[0].description  +'</p>' +
+                        '<p class="text-align-center">'  + 'Current Temp: ' + data.list[i].main.temp+'&#8457' +'</p>' +
+                        '<p class="text-align-center">'  + 'High: ' + data.list[i].main.temp_max+'&#8457' +'</p>' +
+                        '<p class="text-align-center">'  + 'Low:' + data.list[i].main.temp_min+'&#8457'+'</p>' +
                         '<p class="text-align-center">'  + 'Humidity: ' + data.list[i].main.humidity  +'</p>' +
                         '<p class="text-align-center">'  +  'Wind Direction: ' + data.list[i].wind.deg + '</p>' +
                         '<p class="text-align-center">'  + 'Wind Speed: ' + data.list[i].wind.speed +'</p>' +
-                        '<p class="text-align-center">' + 'Pressure: ' + data.list[i].main.pressure  +'</p>' +
                         '</div>' +
                         '</div>'
                     )
@@ -41,8 +54,6 @@ $(document).ready(function(){
     }
     console.log(fiveDayForecast())
 })
-
-
 
 
 })();
