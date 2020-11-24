@@ -17,12 +17,13 @@
         let lngLat = marker.getLngLat();
         console.log(lngLat.lng + " " + lngLat.lat);
     }
-
     marker.on('dragend', onDragEnd);
+
+    let lngLat = onDragEnd();
 
 $(document).ready(function(){
     let fiveDayForecast = function(){
-        $.get("http://api.openweathermap.org/data/2.5/forecast", {
+        $.get("api.openweathermap.org/data/2.5/weather?lat=" + lngLat.lat + "&lon=" + lngLat.lng + "&appid=" + MAPBOX_TOKEN, {
             APPID: OPENWEATHER_TOKEN,
             q: "San Antonio, US",
             units: "imperial"
