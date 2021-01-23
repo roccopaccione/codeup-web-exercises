@@ -57,32 +57,31 @@ $(document).ready(function() {
         // })
         // console.log(fiveDayForecast())
 
-
-        $.ajax({
-            url: "http://api.openweathermap.org/data/2.5/weather",
-            type: "GET",
-            data: {
-                APPID: OPENWEATHER_TOKEN,
-                q: marker
-            }
-        });
-
-        $.ajax("http://api.openweathermap.org/data/2.5/weather", {
-            data: {
-                APPID: OPENWEATHER_TOKEN,
-                q: marker
-            }
-        });
-
-        $.get("http://api.openweathermap.org/data/2.5/weather?APPID=" + OPENWEATHER_TOKEN + "&q=" + marker + ",+US");
-
-        $.get("http://api.openweathermap.org/data/2.5/weather", {
-            APPID: OPEN_WEATHER_APPID,
-            q: marker
-        }).done(function (data) {
-            console.log(data);
-        });
     }
+    $.ajax({
+        url: "http://api.openweathermap.org/data/2.5/weather",
+        type: "GET",
+        data: {
+            APPID: OPENWEATHER_TOKEN,
+            q: marker
+        }
+    });
+
+    $.ajax("http://api.openweathermap.org/data/2.5/weather", {
+        data: {
+            APPID: OPENWEATHER_TOKEN,
+            q: marker
+        }
+    });
+
+    $.get("http://api.openweathermap.org/data/2.5/weather?APPID=" + OPENWEATHER_TOKEN + "&q=" + marker + ",+US");
+
+    $.get("http://api.openweathermap.org/data/2.5/weather", {
+        APPID: OPEN_WEATHER_APPID,
+        q: marker
+    }).done(function (data) {
+        console.log(data);
+    });
 });
 
 
