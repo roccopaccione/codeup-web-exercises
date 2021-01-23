@@ -23,7 +23,7 @@ $(document).ready(function() {
         });
 
         var getIP = 'http://ip-api.com/json/';
-        var openWeatherMap = 'http://api.openweathermap.org/data/2.5/weather'
+        let openWeatherMap = 'http://api.openweathermap.org/data/2.5/weather'
         $.getJSON(getIP).done(function (location) {
             $.getJSON(openWeatherMap, {
                 lat: location.lat,
@@ -32,7 +32,7 @@ $(document).ready(function() {
                 APPID: OPENWEATHER_TOKEN
             }).done(function (data) {
                 console.log(data);
-                for (var i = 0; i < data.list.length; i++) {
+                for (let i = 0; i < data.list.length; i++) {
                     if (data.list[i].dt_txt.includes('00:00:00')) {
                         $('#openWeather').append(
                             '<div class="card d-flex">' +
