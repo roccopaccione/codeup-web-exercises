@@ -77,7 +77,7 @@ $(document).ready(function() {
     $.get("http://api.openweathermap.org/data/2.5/weather?APPID=" + OPENWEATHER_TOKEN + "&q=" + marker + ",+US");
 
     $.get("http://api.openweathermap.org/data/2.5/weather", {
-        APPID: OPEN_WEATHER_APPID,
+        APPID:OPENWEATHER_TOKEN,
         q: marker
     }).done(function (data) {
         console.log(data);
