@@ -17,39 +17,40 @@
 
     function onDragEnd() {
         let lngLat = marker.getLngLat();
+        console.log(lngLat);
         coordinates.style.display = 'block';
         coordinates.innerHTML =
             'Longitude: ' + lngLat.lng + '<br />Latitude: ' + lngLat.lat;
     }
 
     marker.on('dragend', onDragEnd);
-
-$(document).ready(function() {
-    $.ajax({
-        url: "http://api.openweathermap.org/data/2.5/weather",
-        type: "GET",
-        data: {
-            APPID: OPENWEATHER_TOKEN,
-            q: marker
-        }
-    });
-
-    $.ajax("http://api.openweathermap.org/data/2.5/weather", {
-        data: {
-            APPID: OPENWEATHER_TOKEN,
-            q: marker
-        }
-    });
-
-    $.get("http://api.openweathermap.org/data/2.5/weather?APPID=" + OPENWEATHER_TOKEN + "&q=" + marker + ",+US");
-
-    $.get("http://api.openweathermap.org/data/2.5/weather", {
-        APPID:OPENWEATHER_TOKEN,
-        q: marker
-    }).done(function (data) {
-        console.log(data);
-    });
-});
+//
+// $(document).ready(function() {
+//     $.ajax({
+//         url: "http://api.openweathermap.org/data/2.5/weather",
+//         type: "GET",
+//         data: {
+//             APPID: OPENWEATHER_TOKEN,
+//             q: marker
+//         }
+//     });
+//
+//     $.ajax("http://api.openweathermap.org/data/2.5/weather", {
+//         data: {
+//             APPID: OPENWEATHER_TOKEN,
+//             q: marker
+//         }
+//     });
+//
+//     $.get("http://api.openweathermap.org/data/2.5/weather?APPID=" + OPENWEATHER_TOKEN + "&q=" + marker + ",+US");
+//
+//     $.get("http://api.openweathermap.org/data/2.5/weather", {
+//         APPID:OPENWEATHER_TOKEN,
+//         q: marker
+//     }).done(function (data) {
+//         console.log(data);
+//     });
+// });
 
 
 })();
