@@ -26,19 +26,14 @@ $(document).ready(function() {
 
     marker.on('dragend', onDragEnd);
 
-    $.ajax("http://api.openweathermap.org/data/2.5/weather", {
-        data: {
-            APPID: OPENWEATHER_TOKEN,
-            q: onDragEnd()
-        }
-    });
-    $.get("http://api.openweathermap.org/data/2.5/weather", {
-        APPID:OPENWEATHER_TOKEN,
-        q: onDragEnd()
+    $.get("http://api.openweathermap.org/data/2.5/forecast", {
+        APPID: OPENWEATHER_TOKEN,
+        lat: marker.getLngLat().lat,
+        lon: marker.getLngLat().lng,
+        units: "imperial"
     }).done(function (data) {
-        console.log(data);
+        console.log('5 day forecast', data);
     });
-});
 
-
+})
 })();
