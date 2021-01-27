@@ -1,18 +1,19 @@
 (function(){
 "use strict"
+$(document).ready(function() {
     mapboxgl.accessToken = MAPBOX_TOKEN;
     let coordinates = document.getElementById('coordinates');
     let map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/mapbox/streets-v11',
-        center: [0, 0],
-        zoom: 2
+        center: [-98.4916, 29.4252],
+        zoom: 7
     });
 
     let marker = new mapboxgl.Marker({
         draggable: true
     })
-        .setLngLat([0, 0])
+        .setLngLat([-98.4916, 29.4252])
         .addTo(map);
 
     function onDragEnd() {
@@ -24,33 +25,20 @@
     }
 
     marker.on('dragend', onDragEnd);
-//
-// $(document).ready(function() {
-//     $.ajax({
-//         url: "http://api.openweathermap.org/data/2.5/weather",
-//         type: "GET",
-//         data: {
-//             APPID: OPENWEATHER_TOKEN,
-//             q: marker
-//         }
-//     });
-//
-//     $.ajax("http://api.openweathermap.org/data/2.5/weather", {
-//         data: {
-//             APPID: OPENWEATHER_TOKEN,
-//             q: marker
-//         }
-//     });
-//
-//     $.get("http://api.openweathermap.org/data/2.5/weather?APPID=" + OPENWEATHER_TOKEN + "&q=" + marker + ",+US");
-//
-//     $.get("http://api.openweathermap.org/data/2.5/weather", {
-//         APPID:OPENWEATHER_TOKEN,
-//         q: marker
-//     }).done(function (data) {
-//         console.log(data);
-//     });
-// });
+
+    $.ajax("http://api.openweathermap.org/data/2.5/weather", {
+        data: {
+            APPID: OPENWEATHER_TOKEN,
+            q: onDragEnd()
+        }
+    });
+    $.get("http://api.openweathermap.org/data/2.5/weather", {
+        APPID:OPENWEATHER_TOKEN,
+        q: onDragEnd()
+    }).done(function (data) {
+        console.log(data);
+    });
+});
 
 
 })();
