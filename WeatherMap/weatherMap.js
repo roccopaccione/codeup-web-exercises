@@ -34,6 +34,14 @@ $(document).ready(function() {
     }).done(function (data) {
         console.log('5 day forecast', data);
     });
+    $.ajax("http://api.openweathermap.org/data/2.5/forecast", {
+        APPID: OPENWEATHER_TOKEN,
+        lat: marker.getLngLat().lat,
+        lng: marker.getLngLat().lng,
+        units: "imperial"
+    }).done(function (data) {
+        console.log('5 day forecast', data);
+    });
 
 })
 })();
