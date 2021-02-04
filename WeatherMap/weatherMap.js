@@ -1,8 +1,8 @@
 (function(){
 "use strict"
 $(document).ready(function() {
-    let longitude = -98.9347;
-    let latitude = 29.7231;
+    let longitude = -98.48527;
+    let latitude = 29.423017;
 
     mapboxgl.accessToken = MAPBOX_TOKEN;
 
@@ -47,11 +47,11 @@ $(document).ready(function() {
             }
             $('#forecast').append(weatherForecast)
         } else {
-            $('#forecast').replaceWith('<div class="row" id="forecastDays"></div>')
+            $('#forecast').replaceWith('<div class="col" id="forecastDays"></div>')
             weatherForecast = ''
             for (let j = 0; j < data.daily.length; j++) {
                 weatherForecast += `
-                        <div class="col card">
+                        <div class="row card">
                             <img src="http://openweathermap.org/img/w/${data.daily[j].weather[0].icon}.png" alt="weatherIMG">
                             <p>${data.daily[j].weather[0].description}</p>
                             <p>Humidity: ${data.daily[j].humidity}%</p>
