@@ -1,47 +1,99 @@
 (function(){
 "use strict"
 $(document).ready(function() {
+    let longitude = -98.9347;
+    let latitude = 29.7231;
+
     mapboxgl.accessToken = MAPBOX_TOKEN;
-    let coordinates = document.getElementById('coordinates');
-    let map = new mapboxgl.Map({
+
+    const map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/mapbox/streets-v11',
-        center: [-98.4916, 29.4252],
-        zoom: 7
+        center: [longitude, latitude],
+        zoom: 10.8,
+
     });
 
-    let marker = new mapboxgl.Marker({
+    const marker = new mapboxgl.Marker({
         draggable: true
     })
-        .setLngLat([-98.4916, 29.4252])
+        .setLngLat([longitude, latitude])
         .addTo(map);
+
+
+    let geocoder = new MapboxGeocoder({
+        accessToken: MAPBOX_TOKEN,
+        marker: {
+            center: [longitude, latitude],
+            draggable: true
+        },
+        mapboxgl: mapboxgl
+    });
+    //
+    map.addControl(geocoder);
+
+
+    let weatherForecast = ''
+    const renderForecast = function (data) {
+        console.log(data)
+        if (weatherForecast === '') {
+            for (let i = 0; i < data.daily.length; i++) {
+                weatherForecast += `<div class="col card"><img src="http://openweathermap.org/img/w/${data.daily[i].weather[0].icon}.png" alt="weatherIMG"><p>${data.daily[i].weather[0].description}</p>
+                        <p>Humidity: ${data.daily[i].humidity}%</p>
+                        <p>Wind Speed: ${data.daily[i].wind_speed} MPH</p>
+                        <p>Temp: ${data.daily[i].temp.day}°</p>
+                        <p>Low: ${data.daily[i].temp.min}°</p>
+                        <p>High: ${data.daily[i].temp.max}°</p></div>`
+            }
+            $('#forecast').append(weatherForecast)
+        } else {
+            $('#forecast').replaceWith('<div class="row" id="forecastDays"></div>')
+            weatherForecast = ''
+            for (let j = 0; j < data.daily.length; j++) {
+                weatherForecast += `
+                        <div class="col card">
+                            <img src="http://openweathermap.org/img/w/${data.daily[j].weather[0].icon}.png" alt="weatherIMG">
+                            <p>${data.daily[j].weather[0].description}</p>
+                            <p>Humidity: ${data.daily[j].humidity}%</p>
+                            <p>Wind Speed: ${data.daily[j].wind_speed} MPH</p>
+                            <p>Temp: ${data.daily[j].temp.day}°</p>
+                            <p>Low: ${data.daily[j].temp.min}°</p>
+                            <p>High: ${data.daily[j].temp.max}°</p>
+                        </div>`
+            }
+            $('#forecast').append(weatherForecast)
+
+        }
+    }
+
+
+    $.get("http://api.openweathermap.org/data/2.5/onecall", {
+        APPID: OPENWEATHER_TOKEN,
+        lat: latitude,
+        lon: longitude,
+        units: "imperial"
+    }).done(function (data) {
+        $('#location').html(`${data.lon} ${data.lat}`)
+        renderForecast(data)
+    });
 
     function onDragEnd() {
         let lngLat = marker.getLngLat();
-        console.log(lngLat);
-        coordinates.style.display = 'block';
-        coordinates.innerHTML =
-            'Longitude: ' + lngLat.lng + '<br />Latitude: ' + lngLat.lat;
+
+        longitude = lngLat.lng;
+        latitude = lngLat.lat;
+
+        $.get("http://api.openweathermap.org/data/2.5/onecall", {
+            APPID: OPENWEATHER_TOKEN,
+            lat: latitude,
+            lon: longitude,
+            units: "imperial"
+        }).done(function (data) {
+            // $('#location').html(data.city['name'])
+            renderForecast(data)
+        });
     }
 
     marker.on('dragend', onDragEnd);
-
-    $.get("http://api.openweathermap.org/data/2.5/forecast", {
-        APPID: OPENWEATHER_TOKEN,
-        lat: marker.getLngLat().lat,
-        lon: marker.getLngLat().lng,
-        units: "imperial"
-    }).done(function (data) {
-        console.log('5 day forecast', data);
-    });
-    $.ajax("http://api.openweathermap.org/data/2.5/forecast", {
-        APPID: OPENWEATHER_TOKEN,
-        lat: marker.getLngLat().lat,
-        lng: marker.getLngLat().lng,
-        units: "imperial"
-    }).done(function (data) {
-        console.log('5 day forecast', data);
-    });
-
 })
 })();
