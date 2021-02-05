@@ -38,7 +38,7 @@ $(document).ready(function() {
         console.log(data)
         if (weatherForecast === '') {
             for (let i = 0; i < data.daily.length; i++) {
-                weatherForecast += `<div class="card"><img src="http://openweathermap.org/img/w/${data.daily[i].weather[0].icon}.png" alt="weatherIMG"><p>${data.daily[i].weather[0].description}</p>
+                weatherForecast += `<div class="card text-center"><img src="http://openweathermap.org/img/w/${data.daily[i].weather[0].icon}.png" alt="weatherIMG"><p>${data.daily[i].weather[0].description}</p>
                         <p>Humidity: ${data.daily[i].humidity}%</p>
                         <p>Wind Speed: ${data.daily[i].wind_speed} MPH</p>
                         <p>Temp: ${data.daily[i].temp.day}°</p>
@@ -47,9 +47,9 @@ $(document).ready(function() {
             }
             $('#forecast').append(weatherForecast)
         } else {
-            $('#forecast').replaceWith('<div class="col d-block" id="forecastDays"></div>')
+            $('#forecast').replaceWith('<div class="card text-center" id="forecastDays"></div>')
             weatherForecast = ''
-            for (let f = 0; f < data.daily.length; f++) {
+            for (let j = 0; j < data.daily.length; j++) {
                 weatherForecast += `
                         <div class="card">
                             <img src="http://openweathermap.org/img/w/${data.daily[j].weather[0].icon}.png" alt="weatherIMG">
@@ -73,7 +73,7 @@ $(document).ready(function() {
         lon: longitude,
         units: "imperial"
     }).done(function (data) {
-        $('#location').html(`${data.lon} ${data.lat}`)
+        // $('#location').html(`${data.lon} ${data.lat}`)
         renderForecast(data)
     });
 
@@ -89,7 +89,7 @@ $(document).ready(function() {
             lon: longitude,
             units: "imperial"
         }).done(function (data) {
-            // $('#location').html(data.city['name'])
+            $('#location').html(data.city['name'])
             renderForecast(data)
         });
     }
