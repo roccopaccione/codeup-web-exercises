@@ -18,7 +18,7 @@
 <!-------NavBar w/ search Bar------->
 <nav class="navbar navbar-light bg-light">
     <a class="navbar-brand">
-        <div class="container"><p class="h2" id="location"></p></div>
+        <div class="container"><p class="h3" id="location"></p></div>
     </a>
     <form class="form-inline">
         <input class="form-control mr-sm-2" type="search" placeholder="Search Your City" aria-label="Search">
@@ -26,16 +26,14 @@
     </form>
 </nav>
 <!-------->
-<section class="d-flex">
-    <div class="container" style="width: 18rem; height: auto">
-            <div class="row d-block p-3" id="forecast">
-            </div>
+<section class="d-flex container">
+    <div class="row d-block p-3" id="forecast" style="width: 18rem; height: auto">
     </div>
 </section>
 
 
 <!------ Jumbotron w/ Mapbox---->
-<article class="container fluid-contaun">
+<article class="container fluid-container">
     <div id="map"></div>
     <pre id="coordinates" class="coordinates"></pre>
 </article>
