@@ -73,7 +73,7 @@ $(document).ready(function() {
         lon: longitude,
         units: "imperial"
     }).done(function (data) {
-        // $('#location').html(`${data.lon} ${data.lat}`)
+        $('#location').html(`${data.city}`)
         renderForecast(data)
     });
 
@@ -89,7 +89,7 @@ $(document).ready(function() {
             lon: longitude,
             units: "imperial"
         }).done(function (data) {
-            $('#location').html(data.city['name'])
+            // $('#location').html(data.city['name'])
             renderForecast(data)
         });
     }
