@@ -96,26 +96,8 @@ $(document).ready(function() {
 
     marker.on('dragend', onDragEnd);
 })
-    //builds proper format of location string based on mapbox data. city,state/province,country
-    function parseReverseGeo(geocoder) {
-        var region, countryName, placeName, returnStr;
-        if(geocoder.context){
-            $.each(geocoder.context, function(i, v){
-                if(v.id.indexOf('region') >= 0) {
-                    region = v.text;
-                }
-                if(v.id.indexOf('country') >= 0) {
-                    countryName = v.text;
-                }
-            });
-        }
-        if(region && countryName) {
-            returnStr = region + ", " + countryName;
-        } else {
-            returnStr = geocoder.place_name;
-        }
-        console.log(returnStr);
-        return returnStr;
-    }
+    $.get("https://api.mapbox.com/geocoding/v5/mapbox.places/" + map.marker.getLngLat() + ".json?types=poi&access_token=" + OPENWEATHER_TOKEN).done(function (data){
+        console.log(data)
+    });
 
 })();
