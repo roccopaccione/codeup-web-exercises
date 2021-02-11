@@ -96,7 +96,7 @@ $(document).ready(function() {
 
     marker.on('dragend', onDragEnd);
 })
-    $.get("https://api.mapbox.com/geocoding/v5/mapbox.places/" + map.marker.getLngLat() + ".json?types=poi&access_token=" + OPENWEATHER_TOKEN).done(function (data){
+    $.get("https://api.mapbox.com/geocoding/v5/mapbox.places/" + mapboxgl.marker.getLngLat().lng + "," + mapboxgl.marker.getLngLat().lat + ".json?types=poi&access_token=" + OPENWEATHER_TOKEN).done(function (data){
         console.log(data)
     });
 
