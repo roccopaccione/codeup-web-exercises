@@ -92,12 +92,11 @@ $(document).ready(function() {
             // $('#location').html(data.city['name'])
             renderForecast(data)
         });
+        $.get("https://api.mapbox.com/geocoding/v5/mapbox.places/" + lngLat.lng + "," + lngLat.lat + ".json?types=poi&access_token=" + MAPBOX_TOKEN).done(function (data){
+            console.log(data.features);
+        });
     }
 
     marker.on('dragend', onDragEnd);
 })
-    $.get("https://api.mapbox.com/geocoding/v5/mapbox.places/" + mapboxgl.marker.getLngLat().lng + "," + mapboxgl.marker.getLngLat().lat + ".json?types=poi&access_token=" + OPENWEATHER_TOKEN).done(function (data){
-        console.log(data)
-    });
-
 })();
