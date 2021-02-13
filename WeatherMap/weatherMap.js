@@ -29,7 +29,7 @@ $(document).ready(function() {
         },
         mapboxgl: mapboxgl
     });
-    //
+
     map.addControl(geocoder);
 
 
